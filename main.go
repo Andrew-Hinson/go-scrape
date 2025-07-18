@@ -52,14 +52,14 @@ func main() {
 
 	time.Sleep(5 * time.Second)
 
-	productCards, err := wd.FindElements(selenium.ByCSSSelector, ".product-item")
+	productCards, err := wd.FindElements(selenium.ByCSSSelector, "ul[data-elid='product-grid'] > li article")
 	if err != nil {
 		log.Fatalf("Failed to find product cards: %v", err)
 	}
 
 	for _, card := range productCards {
-		nameEl, _ := card.FindElement(selenium.ByCSSSelector, ".item-heading")
-		priceEl, _ := card.FindElement(selenium.ByCSSSelector, ".price")
+		nameEl, _ := card.FindElement(selenium.ByCSSSelector, "h2")
+		priceEl, _ := card.FindElement(selenium.ByCSSSelector, "span")
 		linkEl, _ := card.FindElement(selenium.ByCSSSelector, "a")
 		imgEl, _ := card.FindElement(selenium.ByCSSSelector, "img")
 
