@@ -1,0 +1,7 @@
+prompt_plan.md
+repomix-output.xml
+go.sum
+go-scrape
+*.csv
+chromedriver.log
+.env
